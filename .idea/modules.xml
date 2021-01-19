@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PrintQR.iml" filepath="$PROJECT_DIR$/.idea/PrintQR.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrintQR.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrintQR.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/QR-Scanner.iml" filepath="$PROJECT_DIR$/.idea/QR-Scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/QR-Scanner.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/QR-Scanner.app.iml" />
     </modules>
   </component>
 </project>

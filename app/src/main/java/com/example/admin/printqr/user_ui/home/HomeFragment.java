@@ -1,5 +1,4 @@
-package com.example.admin.printqr;
-
+package com.example.admin.printqr.user_ui.home;
 
 import android.Manifest;
 import android.content.Intent;
@@ -10,7 +9,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,11 +20,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
 
+import com.example.admin.printqr.ActivityScanBarCode;
+import com.example.admin.printqr.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
@@ -33,7 +37,7 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 import java.io.File;
 import java.io.FileOutputStream;
 
-public class ActivityScanBarCode extends AppCompatActivity {
+public class HomeFragment extends Fragment {
 
     private static final int CAMERA_PERMISSION_CODE=101;
     private static final int FILE_SHARE_PERMISSION = 102;
@@ -41,15 +45,18 @@ public class ActivityScanBarCode extends AppCompatActivity {
     private ImageView barcode;
     private Button scan_code,share_code;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan_bar_code);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        barcode = (ImageView) findViewById(R.id.bar_code);
-        textView = (TextView) findViewById(R.id.data_text);
-        scan_code= (Button) findViewById(R.id.button_scan);
-        share_code= (Button) findViewById(R.id.share_code);
+
+        barcode = (ImageView) root.findViewById(R.id.bar_code);
+        textView = (TextView) root.findViewById(R.id.data_text);
+        scan_code= (Button) root.findViewById(R.id.button_scan);
+        share_code= (Button) root.findViewById(R.id.share_code);
+
+
 
         String data_in_code="Hello Bar Code Data";
         MultiFormatWriter multiFormatWriter=new MultiFormatWriter();
@@ -62,6 +69,8 @@ public class ActivityScanBarCode extends AppCompatActivity {
         catch (Exception e){
             e.printStackTrace();
         }
+
+
 
         //now let's create barcode scanner
         scan_code.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +90,9 @@ public class ActivityScanBarCode extends AppCompatActivity {
             }
         });
 
-        //now let's share qr code
+
+
+
         share_code.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +109,14 @@ public class ActivityScanBarCode extends AppCompatActivity {
                 }
             }
         });
+        
+        return root;
     }
+
+
+
+
+
 
     private void shareQrCode() {
         //create a file provider
@@ -115,7 +133,7 @@ public class ActivityScanBarCode extends AppCompatActivity {
             Intent intent=new Intent(Intent.ACTION_SEND);
             if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N){
                 intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                intent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(ActivityScanBarCode.this,"com.example.androidbarcode",file));
+                intent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(getContext(),"com.example.androidbarcode",file));
             }
             else{
                 intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
@@ -131,29 +149,40 @@ public class ActivityScanBarCode extends AppCompatActivity {
 
     }
 
+
+
+
+
+
+
     private void openScanner() {
-        new IntentIntegrator(ActivityScanBarCode.this).initiateScan();
+        new IntentIntegrator(getActivity()).initiateScan();
     }
 
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult result=IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if(result!=null){
             if(result.getContents()==null){
-                Toast.makeText(this, "Blank", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Blank", Toast.LENGTH_SHORT).show();
             }
             else{
                 textView.setText("Data : "+result.getContents());
             }
         }
         else{
-            Toast.makeText(this, "Blank", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Blank", Toast.LENGTH_SHORT).show();
         }
     }
 
+
+
+
+
     private boolean checkPermission(String permission){
-        int result= ContextCompat.checkSelfPermission(ActivityScanBarCode.this,permission);
+        int result= ContextCompat.checkSelfPermission(getContext(),permission);
         if(result== PackageManager.PERMISSION_GRANTED){
             return true;
         }
@@ -162,14 +191,17 @@ public class ActivityScanBarCode extends AppCompatActivity {
         }
     }
 
+
+
     private void requestPermission(String permision,int code){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(ActivityScanBarCode.this,permision)){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),permision)){
 
         }
         else{
-            ActivityCompat.requestPermissions(ActivityScanBarCode.this,new String[]{permision},code);
+            ActivityCompat.requestPermissions(getActivity(),new String[]{permision},code);
         }
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

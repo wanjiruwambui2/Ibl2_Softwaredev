@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "464770000929",
+    "project_id": "scanner-7221a",
+    "storage_bucket": "scanner-7221a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464770000929:android:7909ed22310d1be398db60",
+        "android_client_info": {
+          "package_name": "com.example.admin.printqr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464770000929-m6vplvnbsua7i5bqkbjt9av75tqjga10.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.printqr",
+            "certificate_hash": "291128b8e45b419773cbd25aebbf30dd386a8c33"
+          }
+        },
+        {
+          "client_id": "464770000929-8u6hjjoo45rpt3tlkt85hr8ihqc1rtfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4Xnb_L6pJP5xBPo7nt1EHp5Zi_HyMZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464770000929-8u6hjjoo45rpt3tlkt85hr8ihqc1rtfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464770000929:android:af2922e88179cc1c98db60",
+        "android_client_info": {
+          "package_name": "com.example.drugsauthenticator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464770000929-8u6hjjoo45rpt3tlkt85hr8ihqc1rtfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4Xnb_L6pJP5xBPo7nt1EHp5Zi_HyMZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464770000929-8u6hjjoo45rpt3tlkt85hr8ihqc1rtfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

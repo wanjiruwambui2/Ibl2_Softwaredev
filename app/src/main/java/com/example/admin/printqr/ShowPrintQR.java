@@ -1,12 +1,15 @@
 package com.example.admin.printqr;
 
 import android.graphics.Bitmap;
-import android.support.v4.print.PrintHelper;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.print.PrintHelper;
+
 
 public class ShowPrintQR extends AppCompatActivity {
 

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@color/primaryApp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_baseline_email_24" />
+
+            <EditText
+                android:id="@+id/registerEmail"
+                android:layout_width="240dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:hint="Email address"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textColorHint="@android:color/darker_gray"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_baseline_vpn_key_24" />
+
+            <EditText
+                android:id="@+id/registerPass"
+                android:layout_width="240dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="40dp"
+                android:hint="Password"
+                android:layout_gravity="bottom"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_baseline_vpn_key_24" />
+
+            <EditText
+                android:id="@+id/regcPass"
+                android:layout_width="240dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="40dp"
+                android:hint="Password"
+                android:layout_gravity="bottom"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@android:color/darker_gray"/>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/registerBt"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:text="register"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:background="@drawable/round_button"/>
+
+        <ProgressBar
+            android:id="@+id/registerProgress"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="-50dp"
+            android:layout_gravity="center_horizontal"
+            android:progressTint="@color/white"
+            android:visibility="gone"/>
+
+        
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/registerTV"
+            android:text="Already have an account? Login"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+</RelativeLayout>
