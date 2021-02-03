@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+/*
     private Bitmap printQRCode(String textToQR){
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             return bitmap;
+
         } catch (WriterException e) {
             e.printStackTrace();
             return null;
@@ -55,5 +56,5 @@ public class MainActivity extends AppCompatActivity {
 
     public void openScanner(View view) {
         startActivity(new Intent(MainActivity.this,ActivityScanBarCode.class));
-    }
+    }*/
 }
