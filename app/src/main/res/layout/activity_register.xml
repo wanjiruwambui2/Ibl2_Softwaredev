@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    android:background="@color/primaryApp">
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
             android:progressTint="@color/white"
             android:visibility="gone"/>
 
-        
+
 
         <TextView
             android:layout_width="wrap_content"
