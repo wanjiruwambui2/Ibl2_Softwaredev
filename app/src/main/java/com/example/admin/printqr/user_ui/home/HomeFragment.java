@@ -17,8 +17,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+
 import com.bumptech.glide.Glide;
+import com.example.admin.printqr.MapsActivity;
 import com.example.admin.printqr.R;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -81,7 +85,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
     private DatabaseReference productsDBRef;
-    private void fetchScannedProductData(String productID) {
+    private void fetchScannedProductData(final String productID) {
 
         productsLL.setVisibility(View.VISIBLE);
         productsDBRef = FirebaseDatabase.getInstance().getReference("Products").child(productID);
@@ -117,6 +121,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         String profileUrl = map.get("productImageURL").toString();
                         Glide.with(getContext()).load(profileUrl).into(imageView);
                     }
+                }else{
+
+                    Snackbar.make(getView(),"Product not found in the database", BaseTransientBottomBar.LENGTH_LONG).show();
+                   if (productID!=null) {
+
+                       Intent MapsIntent = new Intent(getContext(), MapsActivity.class);
+                       MapsIntent.putExtra("ProductID", productID);
+                       startActivity(MapsIntent);
+
+                   }else{
+
+
+                   }
                 }
             }
 
