@@ -9,7 +9,7 @@
 
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -19,12 +19,12 @@
         >
 
         <ImageView
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/productImageView2"
             android:layout_width="144dp"
             android:layout_height="129dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/ic_menu_camera" />
 
         <EditText
@@ -32,10 +32,10 @@
             android:layout_width="330dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="0dp"
             android:fontFamily="monospace"
             android:hint="Product name"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:textColor="@color/black" />
 
 
@@ -44,23 +44,23 @@
             android:layout_width="330dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="monospace"
             android:hint="manufacture Date"
-            android:inputType="textPersonName"
+            android:inputType="date"
             android:textColor="@color/black"/>
 
 
 
 
         <EditText
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/expDateET"
             android:layout_width="330dp"
             android:layout_height="40dp"
             android:fontFamily="monospace"
             android:layout_gravity="center_horizontal"
-            android:inputType="phone"
+            android:inputType="date"
             android:hint="Expiry Date"
             android:textColor="@color/black"/>
 
@@ -77,13 +77,48 @@
 
 
         <ImageView
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/productImageView1"
             android:layout_width="144dp"
             android:layout_height="129dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
             android:src="@drawable/ic_menu_camera" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:text="Update"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:focusable="true"
+                android:clickable="true"
+                />
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:text="Delete"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:focusable="true"
+                android:clickable="true"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

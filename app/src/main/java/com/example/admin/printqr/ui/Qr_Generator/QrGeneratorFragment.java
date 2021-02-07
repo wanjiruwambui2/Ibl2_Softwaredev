@@ -141,6 +141,7 @@ public class QrGeneratorFragment extends Fragment implements View.OnClickListene
                                     productsDBRef.child(prodID).updateChildren(newImage);
 
                                     Toast.makeText(getContext(),"Uploaded", Toast.LENGTH_LONG).show();
+                                    getActivity().finish();
 
                                 }
                             });
