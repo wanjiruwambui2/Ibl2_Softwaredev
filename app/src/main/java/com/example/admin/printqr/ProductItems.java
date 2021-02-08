@@ -25,7 +25,7 @@ import java.util.Map;
 public class ProductItems extends AppCompatActivity {
     
     String productID;
-    private Button update, delete;
+    private Button delete;
 
 
     @Override
@@ -40,7 +40,6 @@ public class ProductItems extends AppCompatActivity {
         nameET = findViewById(R.id.nameET);
         prodDateET = findViewById(R.id.manDatET);
         expDate = findViewById(R.id.expDateET);
-        update = findViewById(R.id.btnUpdate);
         delete = findViewById(R.id.btnDelete);
         
         fetchScannedProductData(productID);
@@ -49,7 +48,8 @@ public class ProductItems extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 productsDBRef = FirebaseDatabase.getInstance().getReference("Products").child(productID);
-                productsDBRef.removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                productsDBRef.removeValue()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(ProductItems.this, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
