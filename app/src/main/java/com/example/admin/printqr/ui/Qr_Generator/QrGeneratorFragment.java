@@ -117,9 +117,7 @@ public class QrGeneratorFragment extends Fragment implements View.OnClickListene
                     Snackbar.make(getView(),"Task Failed " +e.getMessage(), BaseTransientBottomBar.LENGTH_SHORT);
 
 
-
-
-                }
+    }
 
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
