@@ -4,11 +4,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -22,6 +24,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -54,7 +58,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         findViewById(R.id.reportBT).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reportItem(productID);
+
+                if (mLastLocation != null) {
+                    reportItem(productID);
+                }else{
+
+                    Snackbar.make(getCurrentFocus(),"Kindly wait as we pick your current Location.", BaseTransientBottomBar.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -84,7 +94,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         reportsRef.child(reportID).updateChildren(map);
-
+        Toast.makeText(getBaseContext(),"Thank you for reporting this. Appropriate action will be taken as soon as possible",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getBaseContext(),UserHomeActivity.class));
+        this.finish();
     }
 
 

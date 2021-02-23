@@ -1,4 +1,4 @@
-package com.example.admin.printqr;
+package com.example.admin.printqr.productreports;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.example.admin.printqr.ProductItems;
+import com.example.admin.printqr.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -79,7 +80,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.myView
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context,ProductItems.class);
+                Intent intent = new Intent(context, ProductItems.class);
                 intent.putExtra("productID",productsList.getProductID());
                 holder.relativeLayout.getContext().startActivity(intent);
             }
