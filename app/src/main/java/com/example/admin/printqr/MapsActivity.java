@@ -74,6 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         reportID = reportsRef.push().getKey();
 
         userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         HashMap map = new HashMap();
 
         map.put("productID",productID);
@@ -82,7 +83,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         map.put("locationLong",mLastLocation.getLongitude());
 
 
-        reportsRef.updateChildren(map);
+        reportsRef.child(reportID).updateChildren(map);
+
     }
 
 

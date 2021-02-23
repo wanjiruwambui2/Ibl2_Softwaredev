@@ -62,7 +62,6 @@ public class HomeFragment extends Fragment {
 
                             for (DataSnapshot dataSnapshot :snapshot.getChildren()){
 
-                                //Products products = dataSnapshot.getValue(Products.class);
 
                                 Products products = new Products(dataSnapshot.getKey());
                                 list.add(products);
