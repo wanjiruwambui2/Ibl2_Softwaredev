@@ -20,6 +20,10 @@
         android:id="@+id/reportBT"
         android:layout_gravity="bottom"
         android:text="report"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="monospace"
+        android:background="@color/colorPrimaryDark"
         android:layout_margin="20dp"
         />
 
