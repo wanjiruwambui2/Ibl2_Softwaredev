@@ -53,8 +53,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         expDate = root.findViewById(R.id.expDateET);
         productsLL = root.findViewById(R.id.productLL);
 
-
-
         //scan QR
         qrScan =  IntentIntegrator.forSupportFragment(HomeFragment.this);
         scan_code.setOnClickListener(this);
@@ -64,22 +62,62 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
     String productID;
+    String specials[] ={"!", ":", "@", "#", "$", "&", "%", "*", "?",
+            "/", "\"", "=", "<", ">", "{", "}", "\\", "|", ":", "[", "]"};
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
+
             //if qrcode has nothing in it
             if (result.getContents() == null) {
 
                 Toast.makeText(getContext(), "Result Not Found", Toast.LENGTH_LONG).show();
 
             } else {
+
                 //if qr contains data
                 productID = result.getContents();
-                fetchScannedProductData(productID);
+
+                for (int i = 0; i<specials.length;){
+
+                    //check if qr has special characters
+                    if (productID.contains(specials[i])){
+
+                       productID = "invalid";
+                        try {
+
+                            finalize();
+
+                        } catch (Throwable throwable) {
+
+                            throwable.printStackTrace();
+
+                        }
+
+                    }else{
+
+                        i++;
+                    }
+                }
+
+
+                if (!productID.equals("invalid")){
+
+                    fetchScannedProductData(productID);
+
+                }else {
+
+                    Toast.makeText(getContext(), "Product Not Found as it does not match the criteria of items regulated by this app.", Toast.LENGTH_LONG).show();
+
+                }
+
+
             }
         } else {
+
             super.onActivityResult(requestCode, resultCode, data);
+
         }
     }
 

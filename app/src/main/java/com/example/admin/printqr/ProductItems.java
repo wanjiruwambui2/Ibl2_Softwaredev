@@ -53,6 +53,7 @@ public class ProductItems extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(ProductItems.this, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

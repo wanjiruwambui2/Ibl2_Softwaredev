@@ -1,4 +1,4 @@
-package com.example.admin.printqr;
+package com.example.admin.printqr.productreports;
 
 public class Products {
 

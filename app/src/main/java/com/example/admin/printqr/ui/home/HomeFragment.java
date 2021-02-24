@@ -4,18 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.admin.printqr.Products;
-import com.example.admin.printqr.ProductsAdapter;
+import com.example.admin.printqr.productreports.Products;
+import com.example.admin.printqr.productreports.ProductsAdapter;
 import com.example.admin.printqr.R;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -62,7 +58,6 @@ public class HomeFragment extends Fragment {
 
                             for (DataSnapshot dataSnapshot :snapshot.getChildren()){
 
-                                //Products products = dataSnapshot.getValue(Products.class);
 
                                 Products products = new Products(dataSnapshot.getKey());
                                 list.add(products);

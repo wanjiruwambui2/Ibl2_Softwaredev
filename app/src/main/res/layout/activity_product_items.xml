@@ -37,6 +37,7 @@
             android:fontFamily="monospace"
             android:hint="Product name"
             android:inputType="text"
+            android:background="@color/colorPrimaryLight"
             android:textColor="@color/black" />
 
 
@@ -49,6 +50,7 @@
             android:fontFamily="monospace"
             android:hint="manufacture Date"
             android:inputType="date"
+            android:background="@color/colorPrimaryLight"
             android:textColor="@color/black"/>
 
 
@@ -63,6 +65,7 @@
             android:layout_gravity="center_horizontal"
             android:inputType="date"
             android:hint="Expiry Date"
+            android:background="@color/colorPrimaryLight"
             android:textColor="@color/black"/>
 
 
