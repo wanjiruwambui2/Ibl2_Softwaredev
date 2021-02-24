@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".ui.Qr_Generator.QrGeneratorFragment">
 
     <LinearLayout
@@ -12,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/white"
        android:layout_centerHorizontal="true"
         >
 
@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/productImageView"
             android:layout_width="144dp"
-            android:background="@color/white"
+            android:background="@color/colorPrimaryLight"
             android:layout_height="129dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
@@ -35,7 +35,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="monospace"
             android:hint="Product name"
-            android:background="@color/white"
+            android:background="@color/colorPrimaryLight"
             android:inputType="textEmailAddress"
             android:textColor="@color/black" />
 
@@ -48,7 +48,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:fontFamily="monospace"
-            android:background="@color/white"
+            android:background="@color/colorPrimaryLight"
             android:hint="manufacture Date"
             android:inputType="textPersonName"
             android:textColor="@color/black"/>
@@ -66,18 +66,18 @@
                 android:layout_gravity="center_horizontal"
                 android:inputType="phone"
                 android:hint="Expiry Date"
-                android:background="@color/white"
+                android:background="@color/colorPrimaryLight"
                 android:textColor="@color/black"/>
 
 
         <Button
             android:id="@+id/button3"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:padding="10dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/squarebutton"
+            android:background="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
